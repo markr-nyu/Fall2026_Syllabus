@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Syllabus for CSCI-UA-60 Database Design and Web Implementation.">
+  <title>CSCI-UA-60 | Syllabus</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="site-title" href="index.html">
+        <span class="course-number">CSCI-UA-60</span>
+        <span>Database Design and Web Implementation</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Syllabus</a>
+        <a href="notes.html">Class Notes</a>
+        <a href="assignments.html">Assignments</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="hero-bubble hero-bubble-large" aria-hidden="true"></span>
+      <span class="hero-bubble hero-bubble-small" aria-hidden="true"></span>
+      <span class="hero-bubble hero-bubble-warm" aria-hidden="true"></span>
+      <div class="container hero-layout">
+        <div>
+          <p class="eyebrow">Course Syllabus</p>
+          <h1>CSCI-UA-60 Database Design and Web Implementation</h1>
+          <p class="intro">Principles and applications of relational and NoSQL databases, with web implementation using Python, Flask, and database-driven applications.</p>
+        </div>
+        <div class="database-graphic" aria-hidden="true">
+          <div class="flow-node blue node-rdbms">RDBMS</div>
+          <div class="flow-node red node-normalization">Normalization</div>
+          <div class="database-icon">
+            <span class="db-top"></span>
+            <span class="db-line"></span>
+            <span class="db-line"></span>
+            <span class="cloud"></span>
+          </div>
+          <div class="flow-node green node-application">Application</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container content-grid">
+      <article class="panel">
+        <h2>Course Information</h2>
+        <dl class="details-list">
+          <div>
+            <dt>Instructor</dt>
+            <dd>Mark Ramos, <a href="mailto:m.ramos@nyu.edu">m.ramos@nyu.edu</a></dd>
+          </div>
+          <div>
+            <dt>Meeting Time</dt>
+            <dd>Tuesday, Thursday 11:00am-12:15pm</dd>
+          </div>
+          <div>
+            <dt>Location</dt>
+            <dd>GCASL Room 361</dd>
+          </div>
+          <div>
+            <dt>Office Hours</dt>
+            <dd>Tuesday, Thursday 1:00pm-3:00pm, Warren Weaver Hall Room 311</dd>
+          </div>
+          <div>
+            <dt>Course Assistant</dt>
+            <dd>Siva Saravanan, <a href="mailto:ss21176@nyu.edu">ss21176@nyu.edu</a></dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="panel">
+        <h2>Course Description</h2>
+        <p>This course introduces principles and applications of databases. Students will study relational database design, learn how to model real-world data, and explore techniques for constructing, populating, and retrieving data. Beyond relational models, students will also gain experience with Python integration, NoSQL databases like MongoDB, and building simple web apps that publish data from databases.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Prerequisites</h2>
+        <p>Introduction to Computer Programming, such as CSCI-UA.0002 or CSCI-UA.0003, with a grade of C or better.</p>
+        <p>Students who have completed Data Management and Analysis, CSCI-UA.0479, are not eligible.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Learning Objectives</h2>
+        <ul>
+          <li>Understand common textual data formats: CSV, JSON, XML, HTML.</li>
+          <li>Apply relational database theory: relational model, normalization, and ER diagrams.</li>
+          <li>Program with SQL: writing, optimizing, and managing queries.</li>
+          <li>Use MongoDB as an introduction to NoSQL databases.</li>
+          <li>Integrate Python programs with both SQL and NoSQL databases.</li>
+          <li>Develop simple Python-based, database-driven web applications using Flask.</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>Communication and Support</h2>
+        <p>Course communication will use Brightspace or the updated NYU LMS. Announcements, discussions, and resources will be posted there.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Attendance and Participation</h2>
+        <p>Attendance is mandatory. Participation includes contributing to class discussions and in-class activities. Consistent participation strongly correlates with better performance.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Required Software and Hardware</h2>
+        <p>Students need a laptop capable of running MySQL, MongoDB, and Python via PyCharm or VS Code. Other packages will be installed as needed.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Grading</h2>
+        <ul>
+          <li>10%: Quizzes and participation</li>
+          <li>30%: Homework assignments</li>
+          <li>20%: Group project</li>
+          <li>20%: Midterm exam</li>
+          <li>20%: Final exam</li>
+        </ul>
+        <p>Grades will be posted via Brightspace within a week of submission.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Late Policy</h2>
+        <p>Assignments are due before class on the posted due date. Late submissions lose 10% per day. Work more than 5 days late will not receive credit.</p>
+      </article>
+
+      <article class="panel">
+        <h2>Weekly Schedule</h2>
+        <p>This schedule is tentative and may be adjusted to match the pace of the class. The final exam will be held during the university exam period after the final week of classes.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Week</th>
+                <th>Topic</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Course introduction, tools, data formats, and workflow</td>
+                <td>Course setup</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Python data structures review and file-based data</td>
+                <td>Practice and review</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Database fundamentals and relational database concepts</td>
+                <td>Schedule to be posted</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Entity-relationship diagrams and data modeling</td>
+                <td>Design exercises</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Database normalization</td>
+                <td>Schema refinement</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>DDL: defining tables, keys, and constraints</td>
+                <td>SQL practice</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>DML: inserting, updating, deleting, and retrieving records</td>
+                <td>SQL practice</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>DDL/DML workshop and midterm review</td>
+                <td>Midterm preparation</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Midterm and basic SQL</td>
+                <td>Midterm exam</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>SQL functions, aggregation, grouping, and subqueries</td>
+                <td>SQL assignment work</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>Parameterized queries and database access from Python</td>
+                <td>Python database integration</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Python and Flask for database-driven web applications</td>
+                <td>Web app practice</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>NoSQL concepts and MongoDB</td>
+                <td>NoSQL practice</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>Group project development and progress check-ins</td>
+                <td>Project milestone</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>Project presentations, course wrap-up, and final exam review</td>
+                <td>Final project work</td>
+              </tr>
+              <tr>
+                <td>Exam Week</td>
+                <td>Final exam</td>
+                <td>Scheduled by the university exam calendar</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>CSCI-UA-60 Database Design and Web Implementation</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
