@@ -224,6 +224,12 @@ h2 {
   margin-bottom: 14px;
 }
 
+h3 {
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+
 .intro {
   color: var(--muted);
   font-size: 1.15rem;
@@ -486,6 +492,36 @@ h2 {
 
 .panel > :last-child {
   margin-bottom: 0;
+}
+
+.note-subsection {
+  border-top: 1px solid rgba(23, 23, 23, 0.12);
+  margin-top: 18px;
+  padding-top: 18px;
+}
+
+.resource-list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.resource-list a {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(23, 23, 23, 0.12);
+  border-radius: 8px;
+  display: block;
+  font-weight: 700;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient-main) border-box;
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(47, 134, 199, 0.12);
 }
 
 .details-list {
