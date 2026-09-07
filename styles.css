@@ -230,6 +230,14 @@ h3 {
   margin: 0 0 12px;
 }
 
+h4 {
+  color: var(--muted);
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  margin: 18px 0 8px;
+  text-transform: uppercase;
+}
+
 .intro {
   color: var(--muted);
   font-size: 1.15rem;
@@ -522,6 +530,33 @@ h3 {
   background: linear-gradient(#ffffff, #ffffff) padding-box, var(--gradient-main) border-box;
   border-color: transparent;
   box-shadow: 0 10px 24px rgba(47, 134, 199, 0.12);
+}
+
+.resource-list .lecture-companions {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 8px 0 4px 16px;
+  padding: 0 0 0 12px;
+  border-left: 2px solid var(--orange);
+}
+
+.lecture-companions a {
+  background: rgba(247, 153, 28, 0.06);
+  border-color: rgba(185, 87, 22, 0.18);
+  color: var(--orange-dark);
+  font-size: 0.95rem;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  padding: 8px 12px;
+}
+
+.lecture-companions a:hover,
+.lecture-companions a:focus-visible {
+  background: rgba(247, 153, 28, 0.12);
+  border-color: var(--orange-dark);
+  color: var(--orange-dark);
+  box-shadow: none;
 }
 
 .details-list {

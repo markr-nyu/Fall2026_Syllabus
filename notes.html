@@ -36,61 +36,117 @@
       <article class="panel">
         <h2>Week 1: Course Introductions</h2>
         <section class="note-subsection" aria-labelledby="week-1-class-1">
-          <h3 id="week-1-class-1">Class 1: Class Introduction</h3>
+          <h3 id="week-1-class-1">Class 1: Course Introduction and Overview of Databases</h3>
+          <p>We will start by reviewing the course structure, tools, assessment plan, and semester project, then move into a first discussion of what databases are and why database systems matter.</p>
           <ul class="resource-list">
-            <li><a href="#">Course syllabus</a></li>
-            <li><a href="#">Prospective course schedule</a></li>
-            <li><a href="#">Course introduction</a></li>
-            <li><a href="#">Normalization demo</a></li>
-            <li><a href="#">Bookstore demo</a></li>
+            <li><a href="files/class_intro.pdf">Course introduction slides</a></li>
+            <li><a href="files/database_overview.pdf">Overview of databases slides</a></li>
+          </ul>
+          <h4>Course introduction topics</h4>
+          <ul>
+            <li>Core course themes: relational database systems, SQL, NoSQL, and web implementation.</li>
+            <li>Course tools: EdStem Workspaces, LucidChart, GitHub, SQLite DB Viewer, VS Code, Python, Flask, Jinja, SQLite, and MongoDB.</li>
+            <li>Assessment overview: quizzes and participation, homework, group project, midterm, and final exam.</li>
+            <li>Final project: a semester-long group project building a dynamic, data-driven web application with an SQLite backend.</li>
+          </ul>
+          <h4>Database overview topics</h4>
+          <ul>
+            <li>Starting question: what makes a database different from a file or a record-keeping system?</li>
+            <li>Databases as organized collections of data designed to be found, updated, trusted, and used by people and programs.</li>
+            <li>Why early program-owned files became limiting as organizations, hardware, and shared data needs grew.</li>
+            <li>How the relational model separated application, logical, and physical views of data.</li>
+            <li>Enterprise database concerns: atomicity, consistency, isolation, durability, scale, and stability.</li>
+            <li>Modern database landscape: OLTP systems, warehouses, in-memory databases, embedded databases, SQL platforms, and NoSQL choices.</li>
           </ul>
         </section>
       </article>
       <article class="panel">
-        <h2>Week 2: Python Data Structures - Review</h2>
+        <h2>Week 2: Python Review and Data Persistence</h2>
         <section class="note-subsection" aria-labelledby="week-2-class-2">
-          <h3 id="week-2-class-2">Class 2: CSV/TSV Lab</h3>
+          <h3 id="week-2-class-2">Class 2: Python Review - From Collections to Persistence</h3>
+          <p>In Class 1, we explored what makes a database different from files and data held in a running program. We will return to that distinction by reviewing how Python organizes data in memory, then close by asking how that data can survive after the program stops.</p>
           <ul class="resource-list">
-            <li><a href="#">CSV and TSV files</a></li>
-            <li><a href="#">Titanic passengers demo</a></li>
-            <li><a href="#">CSV files demo</a></li>
+            <li><a href="files/PYTHON_%20A%20QUICK%20%F0%9F%9A%80%20review%20of%20a%20Programming%20laNguage.pdf">Python quick review slides</a>
+              <ul class="lecture-companions" aria-label="Accompanying code and demos">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/pwGvJ6FlUVrtS4d55vuONZbdvP7JlYg2">Python review code: EdStem workspace</a></li>
+                <li><a href="https://github.com/S26-DB-Design-and-Web-Implementation/python_review">Python review code: GitHub repository</a></li>
+              </ul>
+            </li>
+            <li><a href="files/Data%20in-memory%20vs%20Data%20on-disk.pdf">Data in-memory vs data on-disk slides</a>
+              <ul class="lecture-companions" aria-label="Accompanying code and demos">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/p4F3iI0cnZ0rjsvrvkVGKD6uPymBJAZU">Data in-memory vs data on-disk code: EdStem workspace</a></li>
+                <li><a href="https://github.com/markr-nyu/lecture_src">Data in-memory vs data on-disk code: GitHub repository</a></li>
+              </ul>
+            </li>
           </ul>
+          <h4>Optional: set up Python in VS Code on your own device</h4>
+          <p>If you would like to use Python in VS Code on your own computer, these guides are here for reference. We may walk through setup in class, but these resources are available for you to follow independently.</p>
+          <ul class="resource-list">
+            <li><a href="https://code.visualstudio.com/docs/python/python-tutorial">Getting started with Python in VS Code</a></li>
+            <li><a href="https://wiki.python.org/moin/BeginnersGuide/Download">Downloading and installing Python</a></li>
+            <li><a href="https://mac.install.guide/python/brew">Installing Python with Homebrew on macOS</a></li>
+            <li><a href="https://ehmatthes.github.io/pcc_3e/cheat_sheets/">Python Crash Course cheat sheets</a></li>
+          </ul>
+          <h4>Quick refresher: Python basics</h4>
+          <p>Briefly revisit values and types, variables, output, conditionals, functions and return values, and loops. Use these tools throughout the collection examples rather than spending the class reteaching introductory syntax.</p>
+          <h4>Main focus: lists, dictionaries, and tuples</h4>
+          <ul>
+            <li>Lists: ordered, mutable sequences; access by index, slice, append, update, and iterate.</li>
+            <li>Dictionaries: mutable mappings from keys to values; read and update fields, add entries, and iterate over keys and values.</li>
+            <li>Tuples: ordered sequences whose elements cannot be reassigned; access by position and unpack values to represent a fixed record.</li>
+            <li>Compare representations of the same record: what does a position tell us, and what does a named key tell us?</li>
+            <li>Build a small in-memory table as a list of dictionaries or tuples. Practice finding records, filtering rows, and updating values where the structure allows it.</li>
+          </ul>
+          <h4>Closing discussion: data in memory vs data on disk</h4>
+          <ul>
+            <li>Python collections hold data in the running program's memory. Without saving it, that program state is lost when the program ends.</li>
+            <li>Files on disk provide persistence: saved data can be read again in a later run or shared with another program.</li>
+            <li>Changing an in-memory collection does not automatically change a file; loading and saving are explicit steps.</li>
+            <li>Saving rows is only part of the database story. With plain collections and files, our code still has to enforce rules such as unique IDs and valid values.</li>
+          </ul>
+          <p><strong>Exit question:</strong> We have a list of records in Python. If we stop the program now, what is lost, and what would we need to save so another run could reconstruct those records? Class 3's CSV/TSV lab will put that transition into practice.</p>
         </section>
         <section class="note-subsection" aria-labelledby="week-2-class-3">
-          <h3 id="week-2-class-3">Class 3: Python Review</h3>
+          <h3 id="week-2-class-3">Class 3: In-Memory Data Structures Lab and CSV/TSV</h3>
+          <p>Start with the in-memory data structures lab to build on Class 2's Python review. Then move into the CSV/TSV lecture and the additional lab described in the slides, connecting data in memory to tabular data stored on disk.</p>
+          <h4>Opening lab</h4>
           <ul class="resource-list">
-            <li><a href="#">Python quick review</a></li>
-            <li><a href="#">Lecture source</a></li>
-            <li><a href="#">GitHub lecture source</a></li>
-            <li><a href="#">VS Code Python</a></li>
-            <li><a href="#">Homebrew Python install</a></li>
-            <li><a href="#">Python installer</a></li>
-            <li><a href="#">EdStem</a></li>
+            <li><a href="files/Lab_In-Memory_Data_Structures_as_Databases.pdf">Lab: In-Memory Data Structures as Databases</a>
+              <ul class="lecture-companions" aria-label="Accompanying lab code">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/pUQmxapfvvSJ3CLUA7YrvoPpwDrQ2DFT">In-memory data lab: EdStem workspace</a></li>
+                <li><a href="https://github.com/markr-nyu/data_lab">In-memory data lab source code: GitHub repository</a></li>
+              </ul>
+            </li>
+          </ul>
+          <h4>CSV/TSV lecture and follow-up lab</h4>
+          <ul class="resource-list">
+            <li><a href="files/CSV%20and%20TSV%20Files%20%281%29.pdf">CSV and TSV files slides</a>
+              <ul class="lecture-companions" aria-label="Accompanying code and demos">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/paJYUsjLDPUhjqavW0Y6kz7IJEirXfty">Titanic TSV demo: EdStem workspace</a></li>
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/pbxb5phIXXXsd098ayLvNhTmbSt9LkPz">CSV lecture examples: EdStem workspace</a></li>
+              </ul>
+            </li>
+          </ul>
+          <h4>CSV/TSV lab focus</h4>
+          <ul>
+            <li>Inspect rows, fields, headers, and delimiters in CSV and TSV files.</li>
+            <li>Load file data into Python and connect the records to the collections reviewed in Class 2.</li>
+            <li>Modify data in memory, save it to disk, and reload it to see what persists between program runs.</li>
+            <li>Discuss what a text file provides and which responsibilities still belong to the program.</li>
           </ul>
         </section>
       </article>
       <article class="panel">
-        <h2>Week 3: Database Fundamentals</h2>
+        <h2>Week 3: Schema Design</h2>
         <section class="note-subsection" aria-labelledby="week-3-class-4">
-          <h3 id="week-3-class-4">Class 4: In-Memory Data Lab</h3>
-          <ul class="resource-list">
-            <li><a href="#">Data in-memory vs data on-disk</a></li>
-            <li><a href="#">Lecture source workspace</a></li>
-            <li><a href="#">Lecture GitHub repo</a></li>
-            <li><a href="#">Lab: in-memory data structures</a></li>
-            <li><a href="#">Lab workspace</a></li>
-            <li><a href="#">Lab GitHub repo</a></li>
-          </ul>
+          <h3 id="week-3-class-4">Class 4: Introduction to Schema Design</h3>
+          <p>Move from records in Python and text files to planning a database schema: identify entities, organize attributes into tables, and choose data types and primary keys.</p>
+          <p>Lecture materials and examples will be added here.</p>
         </section>
         <section class="note-subsection" aria-labelledby="week-3-class-5">
-          <h3 id="week-3-class-5">Class 5: Database Fundamentals</h3>
-          <ul class="resource-list">
-            <li><a href="#">Database fundamentals</a></li>
-            <li><a href="#">Lucid App board</a></li>
-            <li><a href="#">System design</a></li>
-            <li><a href="#">Database fundamentals: Python</a></li>
-            <li><a href="#">Database fundamentals: SQLite3</a></li>
-          </ul>
+          <h3 id="week-3-class-5">Class 5: Schema Design Practice</h3>
+          <p>Turn a short set of requirements into a draft schema. Refine table structure, consider constraints and foreign keys, and prepare for Week 4's relationship modeling and ER diagrams.</p>
+          <p>Lecture materials and exercises will be added here.</p>
         </section>
       </article>
       <article class="panel">
