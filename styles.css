@@ -508,6 +508,49 @@ h4 {
   padding-top: 18px;
 }
 
+.sql-cheatsheet {
+  min-width: 0;
+  margin: 24px 0;
+  padding: clamp(12px, 3vw, 24px);
+  border: 1px solid rgba(47, 134, 199, 0.25);
+  border-radius: 8px;
+  background: rgba(47, 134, 199, 0.04);
+}
+
+.sql-example h3 {
+  margin: 20px 0 8px;
+  font-size: 1rem;
+}
+
+.sql-example pre {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 14px;
+  border-radius: 6px;
+  background: #172b3a;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.note-figure {
+  margin: 20px 0;
+}
+
+.note-figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.note-figure figcaption {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .resource-list {
   display: grid;
   gap: 10px;
@@ -725,4 +768,9 @@ th {
   .database-graphic {
     transition: none;
   }
+}
+
+.sql-command-list dt {
+  color: var(--orange-dark);
+  font-weight: 700;
 }
