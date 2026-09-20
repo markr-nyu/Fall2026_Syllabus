@@ -164,6 +164,9 @@
             <li>Edit a record in the CSV and rerun the script. Compare this with changing only a dictionary in memory.</li>
           </ul>
           <h4>Guided demo: use the same records on a webpage</h4>
+          <ul class="resource-list">
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/p5rrURPOFSEZrShYzjGCqY6tTEjlL3rx" target="_blank" rel="noopener noreferrer">Zoo demo Flask app (CSV): EdStem workspace</a></li>
+          </ul>
           <p>Trace the path <strong>CSV file → Python records → HTML template → animal cards in the browser</strong>. Use the supplied Flask app to see where the records are loaded, passed to the template, and displayed by a loop. Focus on the connection between data and the page; detailed Flask routing, configuration, and template inheritance will come later.</p>
           <ul>
             <li>Find where an animal's name, species, habitat, and image filename appear in its card.</li>
@@ -191,7 +194,7 @@
             <li>Explain primary keys and foreign keys, and how columns and rows organize data in a table.</li>
             <li>Create, populate, and query an SQLite animal table to supply data to the zoo webpage.</li>
           </ul>
-          <p>Start with the components of a relational database and model entities, attributes, and relationships together. Then connect those ideas to the zoo data: create and populate an SQLite table, use it to recreate the animal webpage, and work in small groups to give the zoo a theme.</p>
+          <p>Start with the components of a relational database and model entities, attributes, and relationships together. Then connect those ideas to the zoo data by defining an SQLite table. The SQLite webpage demo and small-group zoo customization activity will follow in Class 6.</p>
           <ul class="resource-list">
             <li><a href="files/database_fundamentals_part_1.pdf" target="_blank" rel="noopener noreferrer">Database Fundamentals, Part 1: lecture slides</a>
               <ul class="lecture-companions" aria-label="Accompanying modeling resources">
@@ -225,12 +228,37 @@
             <li>Define an <code>animals</code> table with an <code>id INTEGER PRIMARY KEY</code> and <code>TEXT</code> columns for <code>name</code>, <code>species</code>, <code>habitat</code>, and <code>image</code>.</li>
             <li>Discuss what a schema specifies and why a stable ID is useful even when an animal's name changes.</li>
           </ul>
+        </section>
+      </article>
+      <article class="panel">
+        <h2>Week 4: ERD (Entity-Relationship Diagram)</h2>
+        <section class="note-subsection" aria-labelledby="week-4-class-6">
+          <h3 id="week-4-class-6">Class 6: Relationship Modeling</h3>
+          <figure class="note-figure">
+            <img src="files/zoo_sqlite_shell.png" alt="SQLite in EdStem: run sqlite3 --version, sqlite3 zoo.db, or sqlite3 in the terminal. At the sqlite&gt; prompt, use .open zoo.db, .read setup_zoo.sql, .help, and .quit. Dot commands control the SQLite shell and have no semicolon; SQL statements end with a semicolon." width="1672" height="941" loading="lazy">
+            <figcaption>Getting started in the EdStem terminal. <strong>SQLite shell commands</strong> (dot commands) are interpreted by the command-line program; SQL statements are executed by the database engine. <code>.read</code> runs a script, so SQL inside that script can change the database. Use your actual database and script filenames. See the <a href="https://www.sqlite.org/cli.html" target="_blank" rel="noopener noreferrer">SQLite command-line shell documentation</a>.</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <img src="files/zoo_schema_definition.png" alt="Zoo schema diagram showing one habitat related to many animals, with SQLite CREATE TABLE statements and a foreign key from animals.habitat_id to habitats.id." width="1672" height="941" loading="lazy">
+            <figcaption>Schema definition: a relationship-modeling extension with separate <code>habitats</code> and <code>animals</code> tables. This version replaces the app's <code>habitat</code> text column with <code>habitat_id</code>; the DDL and DML examples below use the original app schema.</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <img src="files/zoo_ddl.png" alt="DDL example creating the animals table with id as the primary key, required name and species fields, and habitat and image text fields." width="1672" height="941" loading="lazy">
+            <figcaption>DDL defines the zoo table's structure: <code>CREATE TABLE</code> sets its columns and constraints.</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <img src="files/zoo_dml.png" alt="DML example inserting animal 1, Leo, a Lion in the Savanna, with image filename lion.jpg. Text values are enclosed in single quotes." width="1672" height="941" loading="lazy">
+            <figcaption>DML changes the zoo's stored records. Use single quotes around text values and choose image filenames that exist in the app.</figcaption>
+          </figure>
+          <p>Begin Tuesday's class with the SQLite webpage demo and zoo customization activity carried over from Class 5, then continue with relationship modeling and ER diagrams.</p>
           <h4>Guided demo: populate the same webpage from SQLite</h4>
           <ul class="resource-list">
-            <li><a href="https://edstem.org/us/courses/105050/workspaces/p5rrURPOFSEZrShYzjGCqY6tTEjlL3rx" target="_blank" rel="noopener noreferrer">Zoo demo Flask app: EdStem workspace</a></li>
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/pYvgy2r01eU9qUZ0bJhrpG54LM5xg86p" target="_blank" rel="noopener noreferrer">Zoo demo Flask app (SQLite): EdStem workspace</a> — stores animal data in a SQLite database.</li>
+            <li><a href="sql-cheatsheet.html" target="_blank" rel="noopener noreferrer">Beginning SQLite cheat sheet: command overview and animal examples</a></li>
           </ul>
           <p>Trace the new path <strong>SQLite table → SQL query → Python records → HTML template → animal cards in the browser</strong>. Use supplied Python database-access code to replace the CSV loader with a query that returns the same named fields. Reuse the animal-card template and compare the output with the CSV version.</p>
           <h4>Small-group activity: build a themed zoo</h4>
+          <p><strong>Part 1: animal records.</strong> Customize the animals and webpage for your group's theme.</p>
           <ol>
             <li>Choose a theme, such as an Arctic wildlife park, rainforest sanctuary, or imaginary-creature zoo.</li>
             <li>Create your group's <code>animals</code> table and write <code>INSERT</code> statements for at least five animals that fit the theme. Use the shared column names so the supplied webpage can display your records.</li>
@@ -240,33 +268,61 @@
             <li>Share the webpage and the SQL used to create, populate, and filter the table. Explain one CSV-to-table mapping and how the query determines what appears.</li>
           </ol>
           <p><strong>Check your work:</strong> The database contains the themed records, the webpage displays them, and the filtered query returns the expected subset. Save your SQL statements so you can recreate the table and its contents.</p>
-          <p><strong>Exit question:</strong> Our zoo app uses one table. If habitats needed their own attributes, what would a separate habitat table contain, and where would the foreign key go? Describe the relationship's cardinality. Week 4 will develop these modeling ideas further with relationships and ER diagrams.</p>
-        </section>
-      </article>
-      <article class="panel">
-        <h2>Week 4: ERD (Entity-Relationship Diagram)</h2>
-        <section class="note-subsection" aria-labelledby="week-4-class-6">
-          <h3 id="week-4-class-6">Class 6: Relationship Modeling</h3>
+          <h4>Part 2: model and create a zoo schedule</h4>
+          <p>After completing the animals, design a daily schedule for your themed zoo and store it in a separate <code>schedule.db</code> database. Include events such as feedings, keeper talks, or habitat tours.</p>
+          <ol>
+            <li><strong>Model before coding.</strong> Decide what one schedule row represents. Sketch a <code>schedule</code> table with an <code>id</code> primary key and the attributes visitors need, such as an event name, start time, and location. Choose data types and identify required fields. Use a consistent time format, such as <code>HH:MM</code>.</li>
+            <li>Review the workspace's <code>schedule.sql</code> and the commented <code>load_schedule()</code> example in <code>app.py</code>. The loader expects a table named <code>schedule</code> with an <code>id</code> column. Compare the supplied fields with your model and keep names consistent wherever they are used.</li>
+            <li>Complete or adapt <code>schedule.sql</code> with your <code>CREATE TABLE</code> statement and <code>INSERT</code> statements for at least five events that fit your zoo's theme.</li>
+            <li>From the workspace terminal, run <code>sqlite3 schedule.db</code>. At the <code>sqlite&gt;</code> prompt, run <code>.read schedule.sql</code> to create and populate the table in this database.</li>
+            <li>Run <code>SELECT * FROM schedule ORDER BY id;</code> to inspect all events. Write another query using <code>WHERE</code> to find a subset, such as events at one location, and sort events by your time column with <code>ORDER BY</code>.</li>
+            <li>Use <code>.quit</code>, reopen with <code>sqlite3 schedule.db</code>, and query the table again to confirm the records persisted. Share your table model, SQL script, and query results.</li>
+          </ol>
+          <p><strong>Check your work:</strong> Your workspace contains both <code>animals.db</code> and <code>schedule.db</code>. The schedule database contains a populated <code>schedule</code> table, and <code>schedule.sql</code> records how to build it. Explain which commands controlled the SQLite shell, which defined the table, and which inserted or queried records.</p>
+          <p><strong>Discussion question: connect to relationship modeling.</strong> Our animal records use one table. If habitats needed their own attributes, what would a separate habitat table contain, and where would the foreign key go? Describe the relationship's cardinality, then sketch it in an ER diagram using your themed zoo.</p>
+          <h4>If time permits: databases at Facebook/Meta</h4>
+          <p>After completing the zoo and schedule exercise, watch this example of databases at Facebook/Meta.</p>
           <ul class="resource-list">
-            <li><a href="#">Email example</a></li>
-            <li><a href="#">Databases at Facebook</a></li>
-            <li><a href="#">Relationships</a></li>
-            <li><a href="#">Lucid App board</a></li>
-            <li><a href="#">GitHub speculative schema</a></li>
-            <li><a href="#">Python bridge table</a></li>
-            <li><a href="#">SQLite bridging example</a></li>
+            <li><a href="https://www.youtube.com/watch?v=jqwegP9xwVE" target="_blank" rel="noopener noreferrer">Databases at Facebook/Meta: video</a></li>
           </ul>
         </section>
         <section class="note-subsection" aria-labelledby="week-4-class-7">
-          <h3 id="week-4-class-7">Class 7: Notation and Group Project Assignments</h3>
+          <h3 id="week-4-class-7">Class 7: Relationship Modeling</h3>
+          <figure class="note-figure">
+            <img src="files/relationship_modeling_join.png" alt="Books and authors connected through a book_authors linking table. Good Omens has two authors. A SQL JOIN across all three tables finds The Left Hand of Darkness by Ursula K. Le Guin." width="1672" height="941" loading="lazy">
+            <figcaption>A linking table represents a many-to-many relationship as two one-to-many relationships. Each linking row pairs a book with an author; the two foreign keys together form its primary key. The JOIN query follows those keys to find an author's books.</figcaption>
+          </figure>
           <ul class="resource-list">
-            <li><a href="#">Relationships Part II</a></li>
-            <li><a href="#">BDCR Business Case</a></li>
-            <li><a href="#">BDCR: Logic to go from description</a></li>
-            <li><a href="#">BDCR ERD</a></li>
-            <li><a href="#">Crow's Foot notation</a></li>
-            <li><a href="#">Group project</a></li>
+            <li><a href="files/relationships.pdf" target="_blank" rel="noopener noreferrer">Relationships: lecture slides</a></li>
+            <li>
+              <figure class="note-figure">
+                <img src="files/github_speculative_schema.png" alt="Speculative GitHub schema with user, repository, collaboration, and commit tables. Collaboration links users and repositories through a composite primary key. Repositories reference their owners, and commits reference a repository and an author." width="1382" height="896" loading="lazy">
+                <figcaption>GitHub speculative schema: ownership, collaborations, and commits modeled with primary keys, foreign keys, and relationship cardinalities.</figcaption>
+              </figure>
+            </li>
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/pKPwsmw940o3hGodSISTjBYkHYPZOChh" target="_blank" rel="noopener noreferrer">Python bridge table: EdStem demo</a></li>
+            <li>
+              <figure class="note-figure">
+                <img src="files/library_erd_sample_data.png" alt="library.db relationships and sample data: customers Ada Lovelace and Grace Hopper; books Dune and Neuromancer; and three loan records. Ada has an open loan for Dune and a returned loan for Neuromancer. Grace has a returned loan for Dune. Primary and foreign keys connect the tables." width="1536" height="1024" loading="lazy">
+                <figcaption><code>library.db</code>: the <code>loan</code> bridge table records each borrowing event. Each customer and book can have zero or many loans; each loan references exactly one customer and one book. <code>loanId</code> is the primary key, allowing repeat loans of the same book by the same customer.</figcaption>
+              </figure>
+              <a href="https://edstem.org/us/courses/105050/workspaces/pDKCPbLMof0OnkG3Ru7t20si89QAydC9" target="_blank" rel="noopener noreferrer">SQLite bridging example: EdStem demo</a>
+            </li>
           </ul>
+          <h4>Activity: model relationships between tables</h4>
+          <p>Use the table pairs from the Relationships slides: movies and reviews, users and photos, posts and comments, orders and items, courses and assignments, and playlists and songs.</p>
+          <ul class="resource-list">
+            <li><a href="https://lucid.app/lucidchart/852d1b35-7571-4e30-9dda-6033a58dbd05/edit?invitationId=inv_97040348-f321-4ee5-b6b0-fa931956303d&amp;page=wR2vMeWE_a4O#" target="_blank" rel="noopener noreferrer">Relationship modeling activity: Lucidchart board</a></li>
+          </ul>
+          <p>For each pair, discuss these questions and add the relationship to the diagram:</p>
+          <ol>
+            <li>What is the primary key of each table?</li>
+            <li>What relationship likely exists between the two tables?</li>
+            <li>What is the cardinality of this relationship?</li>
+            <li>Where should the foreign key go?</li>
+            <li>What would the foreign key column be named?</li>
+          </ol>
+          <p>State the assumptions behind your model. If a relationship is many-to-many, add a linking table and identify its keys.</p>
         </section>
       </article>
       <article class="panel">
@@ -274,6 +330,11 @@
         <section class="note-subsection" aria-labelledby="week-5-class-8">
           <h3 id="week-5-class-8">Class 8: Database Normalization</h3>
           <ul class="resource-list">
+            <li><a href="#">BDCR Business Case</a></li>
+            <li><a href="#">BDCR: Logic to go from description</a></li>
+            <li><a href="#">BDCR ERD</a></li>
+            <li><a href="#">Crow's Foot notation</a></li>
+            <li><a href="#">Group project</a></li>
             <li><a href="#">Database normalization</a></li>
             <li><a href="#">Database evolution</a></li>
             <li><a href="#">Normalization exercises</a></li>

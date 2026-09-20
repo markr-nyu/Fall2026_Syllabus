@@ -1,0 +1,21 @@
+Generated with the built-in image_gen tool.
+
+Create a polished landscape classroom infographic titled "library.db — relationships and sample data". Deep teal background, white table cards, cyan heading, pink/yellow accents matching previous library ERD. Crisp exact text, ample spacing. Show actual sample data in three tables. Top left customer table, top right book table, wide loan table below. Connect customer to loan and book to loan with clearly labeled 1 at parent and 0..* at loan. No connectors crossing data. Exact table content:
+customer:
+customerId (PK) | firstName | lastName | age
+1 | Ada | Lovelace | 28
+2 | Grace | Hopper | 35
+book:
+bookId (PK) | title
+1 | Dune
+2 | Neuromancer
+loan:
+loanId (PK) | customerId (FK) | bookId (FK) | startDate | endDate
+1 | 1 | 1 | 2026-02-01 | NULL
+2 | 1 | 2 | 2026-01-10 | 2026-01-20
+3 | 2 | 1 | 2026-01-05 | 2026-01-15
+Highlight loan row 1 in pale yellow.
+Below table small key legend: "loan.customerId → customer.customerId" and "loan.bookId → book.bookId".
+Bottom panel heading "What does Ada currently have checked out?" Show "customerId = 1 + endDate IS NULL → bookId = 1 → Dune". Supporting sentence "NULL endDate marks an open loan; dated endDate marks a returned book."
+Footer "Each loan has one customer and one book. Each customer or book can have zero or many loans."
+The primary key of loan is loanId alone; no composite key. All three loan rows must appear exactly as provided. Focus on sample rows and relationships, not SQL syntax. No extra records. Render at large landscape size with readable table text.

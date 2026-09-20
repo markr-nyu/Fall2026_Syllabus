@@ -1,0 +1,40 @@
+Generated with the built-in image_gen tool.
+
+zoo_schema_definition.png
+Use case: scientific-educational. Create one polished 16:9 classroom slide image for database class. Match the provided reference aesthetic: warm ivory background, overlapping cyan, pink, coral, yellow rectangles with thin black outlines, green accent square, clean sans serif headings, large crisp monospace SQL with purple SQL keywords. Flat educational infographic, no photos, no decorative animals. All text must be exact and easily readable. Title: "EXAMPLE SCHEMA DEFINITION". Zoo adaptation of reference ERD-to-SQLite slide. Left third: readable ERD tables habitats and animals with a one-to-many connector labeled "one habitat → many animals". habitats table fields: id (PK), name. animals table fields: id (PK), name, species, habitat_id (FK), image. Green arrow from ERD toward SQL. Right two thirds: large white code panel labeled "SQLite", verbatim code:
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE habitats (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE animals (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  species TEXT NOT NULL,
+  habitat_id INTEGER NOT NULL,
+  image TEXT,
+  FOREIGN KEY (habitat_id)
+    REFERENCES habitats(id)
+);
+Bottom note: "Relationship extension: habitat_id replaces the app's habitat text column." Avoid extra tables. Make code and diagram consistent. This extends the zoo app for relationship modeling.
+
+zoo_ddl.png
+Use case: scientific-educational. Create one polished 16:9 classroom slide image for database class. Match the provided reference aesthetic: warm ivory background, overlapping cyan, pink, coral, yellow rectangles with thin black outlines, green accent square, clean sans serif headings, large crisp monospace SQL with purple SQL keywords. Flat educational infographic, no photos, no decorative animals. All text must be exact and easily readable. Title "DDL". Adapt the DDL reference to zoo data. Pink definition panel at left: "Data Definition Language", "Defines database structure.", "Sets columns, data types, and constraints." Large white code panel on right, verbatim:
+CREATE TABLE animals (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  species TEXT NOT NULL,
+  habitat TEXT,
+  image TEXT
+);
+Small diagram below titled "animals" with rows "id (PK)", "name", "species", "habitat", "image". Footer "The schema matches the CSV zoo fields, plus a stable ID." All elements legible, no repeated definition text.
+
+zoo_dml.png
+Use case: scientific-educational. Create one polished 16:9 classroom slide image for database class. Match the provided reference aesthetic: warm ivory background, overlapping cyan, pink, coral, yellow rectangles with thin black outlines, green accent square, clean sans serif headings, large crisp monospace SQL with purple SQL keywords. Flat educational infographic, no photos, no decorative animals. All text must be exact and easily readable. Title "DML". Adapt the DML reference to zoo data. Pink panel at left: "Data Manipulation Language", "Changes stored data.", "INSERT • UPDATE • DELETE", "Works within the structure defined by DDL." Main white code panel, verbatim:
+INSERT INTO animals
+  (id, name, species, habitat, image)
+VALUES
+  (1, 'Leo', 'Lion', 'Savanna', 'lion.jpg');
+Result table on right beneath code titled "animals", columns id, name, species, habitat, image; one row 1, Leo, Lion, Savanna, lion.jpg. Yellow callout across bottom: "Use single quotes for text: 'Leo'." Smaller line "Unquoted Leo is treated as an identifier, not a string value." Second small line "Image filenames must match available files." Do not call a quoting error a constraint violation. Keep code large and fit all text within margins.

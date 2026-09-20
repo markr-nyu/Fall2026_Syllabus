@@ -1,0 +1,23 @@
+Generated with the built-in image_gen tool.
+
+Use case: scientific-educational. Create one polished landscape 16:9 classroom slide matching the previous zoo SQL slides: warm ivory background, cyan title banner, pink and pale yellow panels, coral accents, thin black outlines, green accent square, clear black sans serif headings and large crisp monospace commands. Title "SQLite in EdStem". Subtitle "Start in your workspace terminal". Two columns, with very legible commands and concise explanations. Exact content:
+LEFT COLUMN heading "1. Terminal commands"
+Three command rows:
+"sqlite3 --version" with explanation "Show the installed version."
+"sqlite3 zoo.db" with explanation "Start SQLite using the zoo database file."
+"sqlite3" with explanation "Start SQLite with a temporary in-memory database."
+Below these a highlighted note "To keep your work: open zoo.db before creating tables."
+RIGHT COLUMN heading "2. Inside SQLite: sqlite>"
+Four command rows:
+".open zoo.db" with explanation "Open a database file from inside SQLite."
+".read setup_zoo.sql" with explanation "Run commands from a saved script."
+".help" with explanation "List available shell commands."
+".quit" with explanation "Exit SQLite and return to the terminal."
+BOTTOM full-width panel heading "Dot commands = SQLite shell commands"
+Exact body: "The shell handles dot commands; the database engine executes SQL."
+Example comparison with two clearly labeled lines:
+"Shell command: .read setup_zoo.sql"
+"SQL statement: SELECT * FROM animals;"
+Footnote "Dot commands: one per line, no semicolon. SQL statements: end with a semicolon."
+Small note "Use your actual database and script filenames."
+Do not include extra commands or command prompts in the command rows; sqlite> is a prompt label only, not something to type. This is a teaching infographic, no screenshots or photos. Preserve clear margins and no overlapping text.

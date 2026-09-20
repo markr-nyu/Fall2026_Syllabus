@@ -1,0 +1,32 @@
+Generated with the built-in image_gen tool.
+
+Use case: scientific-educational. Create a clean landscape 16:9 lecture infographic for "RELATIONSHIP MODELING". Inspired by a teaching slide with books and authors tables, a linking table, and a SQL JOIN. Use deep teal background, white table cards, pink and yellow accents and cyan headings, thin dark table rules, crisp large typography. No browser UI. Clear margins and no overlapping panels.
+Subtitle "Connect records with keys and a linking table".
+Upper half: three tables horizontally: books left, book_authors middle, authors right. Connect books to book_authors with label "1 → many" and authors to book_authors with label "1 → many" (one at the outer tables, many at central table). No direct books-to-authors connector.
+Exact table data:
+books columns "book_id (PK)" and "title"
+1 | Dune
+2 | The Left Hand of Darkness
+3 | Good Omens
+book_authors columns "book_id (PK, FK)" and "author_id (PK, FK)"
+1 | 1
+2 | 2
+3 | 3
+3 | 4
+authors columns "author_id (PK)" and "name"
+1 | Frank Herbert
+2 | Ursula K. Le Guin
+3 | Terry Pratchett
+4 | Neil Gaiman
+Small note under linking table: "Together, the two IDs form the primary key."
+Lower half: left dark code panel titled "Which books did Ursula K. Le Guin write?" with exact syntax-highlighted SQL:
+SELECT b.title
+FROM books AS b
+JOIN book_authors AS ba
+  ON b.book_id = ba.book_id
+JOIN authors AS a
+  ON a.author_id = ba.author_id
+WHERE a.name = 'Ursula K. Le Guin';
+Right smaller result card titled "Query result", column "title", row "The Left Hand of Darkness". Below card two short notes: "One book can have many authors." and "One author can write many books."
+Footer: "A many-to-many relationship becomes two one-to-many relationships."
+All SQL, keys, records and connector directions must be accurate. Ensure no table has cropped text and large code font. Use width generously for books title. Do not add Python or DDL code; focus on relationships and JOIN.

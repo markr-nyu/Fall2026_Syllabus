@@ -1,0 +1,21 @@
+Generated with the built-in image_gen tool.
+
+Create a landscape educational ERD infographic titled "library.db" with subtitle "Customers borrow books through the loan bridge table". Match a polished database lecture graphic: deep teal background, crisp white table cards, cyan title, pink and yellow header accents. Large readable exact field names. Three tables arranged customer on left, loan in center, book on right. Table cards contain three columns: Field, Type, Rules.
+customer:
+customerId | INTEGER | PK
+firstName | TEXT | NOT NULL
+lastName | TEXT | NOT NULL
+age | INTEGER | nullable
+loan:
+loanId | INTEGER | PK
+customerId | INTEGER | FK, NOT NULL
+bookId | INTEGER | FK, NOT NULL
+startDate | TEXT | NOT NULL
+endDate | TEXT | nullable
+book:
+bookId | INTEGER | PK
+title | TEXT | NOT NULL
+Connect customer to loan, and book to loan. Explicitly label the customer side "1", loan side "0..*" on customer connector. Explicitly label book side "1", loan side "0..*" on book connector. Use enough horizontal space for labels. Connectors never overlap table text. Below diagram, exact explanation: "Each loan belongs to exactly one customer and one book." Then "A customer or book can appear in zero or many loans."
+Bottom two small panels. First heading "Keys" text "loan.customerId → customer.customerId" and "loan.bookId → book.bookId" and "loanId uniquely identifies each borrowing event." Second heading "Example: Ada's current loans" text "Filter: firstName = 'Ada' AND endDate IS NULL" and "Result: Dune" and "NULL endDate means the loan is still open."
+Small footer "Enable foreign-key enforcement: PRAGMA foreign_keys = ON;"
+Accurate to supplied SQL: loanId is sole primary key, do NOT depict a composite primary key. Relationships permit repeat loans of same book by same customer. No extra fields or constraints. No browser UI. Keep type and rule labels large and legible.
