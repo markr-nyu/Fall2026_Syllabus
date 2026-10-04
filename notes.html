@@ -362,7 +362,7 @@
           </ul>
         </section>
         <section class="note-subsection" aria-labelledby="week-5-class-9">
-          <h3 id="week-5-class-9">Class 9: Database Normalization and SQL/SQLite - Database Definitions</h3>
+          <h3 id="week-5-class-9">Class 9: Database Normalization</h3>
           <ul class="resource-list">
             <li>
               <figure class="note-figure">
@@ -372,16 +372,125 @@
                 <figcaption><a href="files/normalization.pdf" target="_blank" rel="noopener noreferrer">Database evolution</a></figcaption>
               </figure>
             </li>
-            <li><a href="files/database_normalization.pdf" target="_blank" rel="noopener noreferrer">Database normalization: lecture slides</a>
-              <ul class="lecture-companions" aria-label="Normalization practice">
-                <li><a href="files/normalization_exercises.pdf" target="_blank" rel="noopener noreferrer">Normalization exercises</a></li>
-              </ul>
-            </li>
+            <li><a href="files/database_normalization.pdf" target="_blank" rel="noopener noreferrer">Database normalization: lecture slides</a></li>
           </ul>
         </section>
       </article>
       <article class="panel">
-        <h2>Week 6: DDL (Data Definition Language)</h2>
+        <h2>Week 6: Normalization and DDL (Data Definition Language)</h2>
+        <section class="note-subsection" aria-labelledby="week-6-class-10">
+          <h3 id="week-6-class-10">Class 10: Database Normalization, Continued</h3>
+          <p>Finish the normalization slides carried over from Class 9, then apply first, second, and third normal form to the practice exercises. Focus on identifying keys and dependencies, separating facts into appropriate tables, and explaining the assumptions behind each design.</p>
+          <ul class="resource-list">
+            <li><a href="files/database_normalization.pdf" target="_blank" rel="noopener noreferrer">Database normalization: lecture slides continued from Class 9</a></li>
+            <li><a href="files/normalization_exercises.pdf" target="_blank" rel="noopener noreferrer">Normalization exercises</a></li>
+          </ul>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_01.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_01.png" alt="Title slide for the CSCI-UA 60 Normalization Workshop." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Normalization Workshop</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_02.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_02.png" alt="Exercise 1 presents a demographics table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 1: Demographics</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_03.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_03.png" alt="Exercise 2 presents a room table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 2: Room</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_04.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_04.png" alt="Exercise 3 presents an order detail table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 3: Order Detail</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_05.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_05.png" alt="Exercise 4 presents a Rangers scores table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 4: Rangers Scores</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_06.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_06.png" alt="Exercise 5 presents a baseball scores table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 5: Baseball Scores</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/normalization_exercises_07.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/normalization_exercises_07.png" alt="Exercise 6 presents a car rental table for normalization analysis." width="1920" height="1080" loading="lazy">
+            </a>
+            <figcaption>Exercise 6: Car Rental</figcaption>
+          </figure>
+          <p class="answer-key-hint"><strong>Answer key:</strong> Highlight the hidden text below to reveal the link.</p>
+          <p class="answer-key-reveal"><a href="https://edstem.org/us/courses/105050/workspaces/pUspmj9ohm3ZMa07lIhPCO4tdVFSLpUT" target="_blank" rel="noopener noreferrer">Normalization exercises: answer key (EdStem workspace)</a></p>
+        </section>
+        <section class="note-subsection" aria-labelledby="week-6-class-11">
+          <h3 id="week-6-class-11">Class 11: SQL Overview and Data Definition Language with SQLite</h3>
+          <p>Connect the logical designs created in ER diagrams to executable database schemas. Begin with SQL and relational database vocabulary, then use SQLite to create a database file, define tables and constraints, inspect the schema, and make structural changes.</p>
+          <ul class="resource-list">
+            <li><a href="files/sql_overview.pdf" target="_blank" rel="noopener noreferrer">SQL overview: lecture slides</a></li>
+          </ul>
+          <h4>SQL and schema overview</h4>
+          <ul>
+            <li>Distinguish SQL, a language, from relational database management systems such as SQLite, PostgreSQL, MySQL, SQL Server, and MariaDB.</li>
+            <li>Review tables, rows, columns, primary keys, foreign keys, schemas, and constraints.</li>
+            <li>Trace the progression from an ERD's logical structure to a schema implemented in SQL.</li>
+            <li>Compare DDL, DML, DQL, and DCL by the role each category plays in a database.</li>
+            <li>Compare server-based database architecture with SQLite's embedded, file-based model.</li>
+          </ul>
+          <h4>Preview: why the normalized schema matters</h4>
+          <figure class="note-figure">
+            <a href="files/order_detail_exercise.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/order_detail_exercise.png" alt="Exercise 3 presents an unnormalized order detail table and asks students to identify its primary key and normal form, propose a database design, and state their assumptions." width="1648" height="954" loading="lazy">
+            </a>
+            <figcaption>Begin with the Order Detail question: identify the dependencies and propose a normalized design before implementing the schema.</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/order_detail_erd_ddl.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/order_detail_erd_ddl.png" alt="Solution to the order detail exercise showing normalized customer, order, product, and orderLine tables, their relationships, normalization notes, and SQLite DDL that creates the schema." width="1024" height="1536" loading="lazy">
+            </a>
+            <figcaption>Transition from normalized design to implementation: the ERD separates customer, order, product, and line-item facts, and the accompanying SQLite DDL creates that schema.</figcaption>
+          </figure>
+          <ul class="resource-list">
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/pLGr8pIRIpNjMmstdgJtGjeMolWgaiJK" target="_blank" rel="noopener noreferrer">Order schema query preview: EdStem workspace</a>
+              <ul class="lecture-companions" aria-label="Order schema query files">
+                <li><a href="files/order_schema_query_examples.sql" target="_blank" rel="noopener noreferrer">Download the sample data and query examples</a></li>
+              </ul>
+            </li>
+          </ul>
+          <p><strong>Preview only:</strong> Use the query examples to show why normalized tables and foreign keys are useful. We will cover DML and joins in detail next week.</p>
+          <h4>Define the schema with SQLite</h4>
+          <ul class="resource-list">
+            <li><a href="files/ddl_with_sqlite.pdf" target="_blank" rel="noopener noreferrer">Data Definition Language with SQLite: lecture slides and mini-exercise</a></li>
+          </ul>
+          <ul>
+            <li>Create or open a persistent <code>.db</code> file from the SQLite command-line shell and inspect it with <code>.tables</code> and <code>.schema</code>.</li>
+            <li>Use <code>CREATE TABLE</code> to define columns, SQLite data types, keys, and constraints.</li>
+            <li>Apply <code>PRIMARY KEY</code>, <code>FOREIGN KEY</code>, <code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>, and <code>DEFAULT</code> constraints to protect data integrity.</li>
+            <li>Recognize SQLite's five storage classes and flexible type-affinity model.</li>
+            <li>Use SQLite's supported <code>ALTER TABLE</code> operations and understand the table-rebuild pattern for larger schema changes.</li>
+            <li>Use <code>DROP TABLE</code> deliberately to remove a table and its stored data.</li>
+          </ul>
+          <h4>In-class application: streaming service and pets database</h4>
+          <ul class="resource-list">
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/pC7pbli49onMRCzB94TkLtmX4JVN6XF0" target="_blank" rel="noopener noreferrer">Streaming service schema: EdStem demo</a>
+              <ul class="lecture-companions" aria-label="Streaming service schema files">
+                <li><a href="files/streaming_service_schema.sql" target="_blank" rel="noopener noreferrer">Download the streaming service SQLite schema</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>Translate a streaming-service ERD into SQLite tables for users, playlists, artists, tracks, and the <code>playlistTrack</code> bridge table.</li>
+            <li>Create a <code>pets</code> database and a <code>pet</code> table with an auto-generated ID, required fields, validation checks, a default adoption status, and a unique microchip number.</li>
+            <li>Verify the result with <code>.schema</code>; as a bonus, insert sample pets and query the table with <code>SELECT *</code>.</li>
+          </ul>
+        </section>
       </article>
       <article class="panel">
         <h2>Week 7: DML (Data Manipulation Language)</h2>
@@ -401,5 +510,6 @@
       <p>CSCI-UA-60 Database Design and Web Implementation</p>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

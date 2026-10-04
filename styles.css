@@ -596,6 +596,35 @@ h4 {
   font-size: 0.95rem;
 }
 
+.answer-key-hint {
+  margin-bottom: 8px;
+}
+
+.answer-key-reveal {
+  margin: 0;
+  padding: 14px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  background: #172b3a;
+  color: #172b3a;
+  user-select: text;
+}
+
+.answer-key-reveal a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.answer-key-reveal::selection,
+.answer-key-reveal a::selection {
+  background: #f4d35e;
+  color: #172b3a;
+}
+
+.answer-key-reveal:focus-within {
+  color: #ffffff;
+}
+
 .resource-list {
   display: grid;
   gap: 10px;
