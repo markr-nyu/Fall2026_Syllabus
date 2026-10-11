@@ -377,7 +377,7 @@
         </section>
       </article>
       <article class="panel">
-        <h2>Week 6: Normalization and DDL (Data Definition Language)</h2>
+        <h2>Week 6: Normalization, Group Project Planning, and Midterm Overview</h2>
         <section class="note-subsection" aria-labelledby="week-6-class-10">
           <h3 id="week-6-class-10">Class 10: Database Normalization, Continued</h3>
           <p>Finish the normalization slides carried over from Class 9, then apply first, second, and third normal form to the practice exercises. Focus on identifying keys and dependencies, separating facts into appropriate tables, and explaining the assumptions behind each design.</p>
@@ -431,7 +431,44 @@
           <p class="answer-key-reveal"><a href="https://edstem.org/us/courses/105050/workspaces/pUspmj9ohm3ZMa07lIhPCO4tdVFSLpUT" target="_blank" rel="noopener noreferrer">Normalization exercises: answer key (EdStem workspace)</a></p>
         </section>
         <section class="note-subsection" aria-labelledby="week-6-class-11">
-          <h3 id="week-6-class-11">Class 11: SQL Overview and Data Definition Language with SQLite</h3>
+          <h3 id="week-6-class-11">Class 11 (October 8): Group Project ERD Planning Session and Midterm Overview</h3>
+          <p>We will begin with a team planning session for Group Project Milestone 1, focused on developing and checking each group's ERD. We will then go over the format, content, and core skills assessed on the midterm.</p>
+          <h4>Part 1: Group Project ERD planning session</h4>
+          <p><strong>Due date:</strong> The Milestone 1 materials begun during this planning session are not due in class. The completed milestone is due <time datetime="2026-10-22T11:00:00-04:00">Thursday, October 22, 2026, at 11:00 a.m.</time></p>
+          <p><strong>Milestone 1 deliverable:</strong> Submit a URL to a GitHub repository shared by all team members. The repository should contain:</p>
+          <ul>
+            <li>An ERD submitted as a PDF and normalized to third normal form (3NF).</li>
+            <li>A draft analysis report explaining the speculative scenario and the organizational schema the team has designed, including any assumptions about the data and proposed schema.</li>
+            <li>A team statement that demonstrates shared understanding and planning. Explain how work will be divided equitably, how members will remain accountable and support one another, and how the team will prevent an uneven workload.</li>
+          </ul>
+          <h4>Planning goals for class</h4>
+          <ol>
+            <li>Confirm the scenario, business rules, and assumptions your design must represent.</li>
+            <li>Identify the required entities, attributes, primary keys, and foreign keys.</li>
+            <li>Draw and label each relationship, including its cardinality and optionality.</li>
+            <li>Resolve many-to-many relationships with bridge tables and check the design through 3NF.</li>
+            <li>Agree on repository organization, divide the remaining work, and record team responsibilities.</li>
+          </ol>
+          <h4>Part 2: Midterm overview</h4>
+          <ul class="resource-list">
+            <li><a href="files/midterm_overview.pdf" target="_blank" rel="noopener noreferrer">Midterm overview slides</a></li>
+          </ul>
+          <p>The midterm uses short-response questions rather than multiple choice. One section checks individual course concepts, and a second section asks you to translate a short scenario into a relational design and simple SQL.</p>
+          <ul>
+            <li>Python lists, dictionaries, tuples, simple loops, slicing, mutability, and hashable dictionary keys.</li>
+            <li>Normalization, including identifying dependencies, determining the current normal form, explaining why a table does not meet the next normal form, and proposing a correction.</li>
+            <li>Tables and attributes; primary and foreign keys; one-to-many and many-to-many relationships; cardinality; and bridge tables.</li>
+            <li>DDL and DML covered in class, including commands such as <code>CREATE TABLE</code>, <code>DROP TABLE</code>, and <code>DELETE</code>.</li>
+            <li>SQLite data types and constraints, including <code>NOT NULL</code>, <code>UNIQUE</code>, and foreign-key constraints.</li>
+            <li>Simple <code>SELECT</code> statements and two- or three-table <code>JOIN</code> queries that follow foreign-key relationships.</li>
+          </ul>
+          <p><strong>What the exam is designed to assess:</strong> Your ability to identify entities and relationships from a written scenario, sketch a schema, explain design choices, write the corresponding <code>CREATE TABLE</code> statements, and query related data. The exam emphasizes logical correctness and reasoning rather than obscure syntax.</p>
+        </section>
+      </article>
+      <article class="panel">
+        <h2>Week 7: SQL Overview, DDL, and DML</h2>
+        <section class="note-subsection" aria-labelledby="week-7-class-12">
+          <h3 id="week-7-class-12">Class 12: SQL Overview and Data Definition Language with SQLite</h3>
           <p>Connect the logical designs created in ER diagrams to executable database schemas. Begin with SQL and relational database vocabulary, then use SQLite to create a database file, define tables and constraints, inspect the schema, and make structural changes.</p>
           <ul class="resource-list">
             <li><a href="files/sql_overview.pdf" target="_blank" rel="noopener noreferrer">SQL overview: lecture slides</a></li>
@@ -464,7 +501,7 @@
               </ul>
             </li>
           </ul>
-          <p><strong>Preview only:</strong> Use the query examples to show why normalized tables and foreign keys are useful. We will cover DML and joins in detail next week.</p>
+          <p><strong>Preview only:</strong> Use the query examples to show why normalized tables and foreign keys are useful. We will cover DML in Class 13 and joins in detail next week.</p>
           <h4>Define the schema with SQLite</h4>
           <ul class="resource-list">
             <li><a href="files/ddl_with_sqlite.pdf" target="_blank" rel="noopener noreferrer">Data Definition Language with SQLite: lecture slides and mini-exercise</a></li>
@@ -491,9 +528,29 @@
             <li>Verify the result with <code>.schema</code>; as a bonus, insert sample pets and query the table with <code>SELECT *</code>.</li>
           </ul>
         </section>
-      </article>
-      <article class="panel">
-        <h2>Week 7: DML (Data Manipulation Language)</h2>
+        <section class="note-subsection" aria-labelledby="week-7-class-13">
+          <h3 id="week-7-class-13">Class 13: Data Manipulation Language</h3>
+          <p>Continue from schema definition into working with the records stored in a table. Use SQLite to insert, update, delete, and retrieve data while paying close attention to column order, required values, <code>NULL</code>, and safe <code>WHERE</code> clauses.</p>
+          <ul class="resource-list">
+            <li><a href="files/class_13_dml.pdf" target="_blank" rel="noopener noreferrer">Data Manipulation Language: lecture slides</a>
+              <ul class="lecture-companions" aria-label="Accompanying DML code and demos">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/phjsfOgqtIocaDY7VX1behzv3gFVRfmp" target="_blank" rel="noopener noreferrer">DML lecture examples: EdStem workspace</a></li>
+              </ul>
+            </li>
+          </ul>
+          <figure class="note-figure">
+            <a href="files/class_13_ddl_exercise.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/class_13_ddl_exercise.png" alt="DDL mini exercise for creating a pets database and pet table with an auto-generated ID, required name and species, age and weight checks, a default adoption status, and a unique microchip number." width="1676" height="942" loading="lazy">
+            </a>
+            <figcaption>DDL mini exercise: create the <code>pet</code> table and apply the specified constraints.</figcaption>
+          </figure>
+          <figure class="note-figure">
+            <a href="files/class_13_dml_exercise.png" target="_blank" rel="noopener noreferrer">
+              <img src="files/class_13_dml_exercise.png" alt="DML bonus exercise with five INSERT statements that add Buddy, Whiskers, Coco, Max, and Luna to the pet table, followed by SELECT star FROM pet." width="1690" height="936" loading="lazy">
+            </a>
+            <figcaption>DML mini exercise: insert sample pet records, then use <code>SELECT * FROM pet;</code> to check the results.</figcaption>
+          </figure>
+        </section>
       </article>
       <article class="panel">
         <h2>Week 8: Midterm Review: Normalization, DDL, DML, Simple Joins</h2>

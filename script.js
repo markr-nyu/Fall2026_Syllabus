@@ -3,6 +3,35 @@ const graphic = document.querySelector(".database-graphic");
 const bubbleElements = [...document.querySelectorAll(".hero-bubble")];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+const examNotice = document.querySelector(".exam-notice");
+
+if (examNotice) {
+  const resetExamNotice = () => {
+    examNotice.classList.remove("is-pointer-active");
+    ["--exam-x", "--exam-y", "--exam-tilt-x", "--exam-tilt-y"].forEach((property) => {
+      examNotice.style.removeProperty(property);
+    });
+  };
+
+  examNotice.addEventListener("pointermove", (event) => {
+    if (prefersReducedMotion.matches || event.pointerType === "touch") return;
+
+    const bounds = examNotice.getBoundingClientRect();
+    const x = Math.min(100, Math.max(0, ((event.clientX - bounds.left) / bounds.width) * 100));
+    const y = Math.min(100, Math.max(0, ((event.clientY - bounds.top) / bounds.height) * 100));
+
+    examNotice.style.setProperty("--exam-x", `${x}%`);
+    examNotice.style.setProperty("--exam-y", `${y}%`);
+    examNotice.style.setProperty("--exam-tilt-x", `${(y - 50) * -0.025}deg`);
+    examNotice.style.setProperty("--exam-tilt-y", `${(x - 50) * 0.025}deg`);
+    examNotice.classList.add("is-pointer-active");
+  });
+
+  examNotice.addEventListener("pointerleave", resetExamNotice);
+  examNotice.addEventListener("pointercancel", resetExamNotice);
+  prefersReducedMotion.addEventListener("change", resetExamNotice);
+}
+
 if (hero && !prefersReducedMotion.matches) {
   const pointer = {
     active: false,
