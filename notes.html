@@ -553,8 +553,48 @@
         </section>
       </article>
       <article class="panel">
-        <h2>Week 8: Midterm Review: Normalization, DDL, DML, Simple Joins</h2>
-        <p>Continue practicing SQL and relational schema design in class. Review how normalization choices shape a schema, then reinforce the reading with DDL, DML, and simple query exercises.</p>
+        <h2>Week 8: Introductory SQL Wrap-Up and Midterm Review</h2>
+        <section class="note-subsection" aria-labelledby="week-8-class-14">
+          <h3 id="week-8-class-14">Class 14: Introductory SQL Wrap-Up</h3>
+          <p>Continue from Class 13, when we created the <code>pet</code> table with DDL and inserted its records with DML. We will begin on slide 7 of the DML presentation with <code>UPDATE</code> and <code>DELETE</code>, then introduce <code>SELECT</code>, <code>WHERE</code>, and <code>JOIN</code>. These introductory SQL skills will be part of our midterm review.</p>
+          <ul class="resource-list">
+            <li><a href="files/class_13_dml.pdf#page=7" target="_blank" rel="noopener noreferrer">Resume the DML lecture slides at slide 7</a></li>
+            <li><a href="files/class_14_sql_demo.pdf" target="_blank" rel="noopener noreferrer">SQL demo database ERD</a>
+              <ul class="lecture-companions" aria-label="Accompanying SQL demo workspace">
+                <li><a href="https://edstem.org/us/courses/105050/workspaces/pXm2wb8ND341CHVbA8ovOCuBmZv8I2pg" target="_blank" rel="noopener noreferrer">SQL lecture demo: EdStem workspace</a></li>
+              </ul>
+            </li>
+            <li><a href="files/class_14_sql_part_i.pdf" target="_blank" rel="noopener noreferrer">SQL Part I: lecture slides</a></li>
+          </ul>
+          <h4>Topics for practice and review</h4>
+          <ul>
+            <li>Modify records safely with <code>UPDATE</code>, <code>SET</code>, and a targeted <code>WHERE</code> clause.</li>
+            <li>Remove selected records with <code>DELETE</code> and understand what happens when <code>WHERE</code> is omitted.</li>
+            <li>Retrieve columns and rows with <code>SELECT</code>, <code>FROM</code>, and <code>WHERE</code>.</li>
+            <li>Filter results with comparison operators, <code>LIKE</code>, <code>IN</code>, <code>IS NULL</code>, <code>BETWEEN</code>, <code>AND</code>, and <code>OR</code>.</li>
+            <li>Use an introductory inner <code>JOIN</code> to combine matching rows from related tables.</li>
+            <li>Review the progression from normalized design and DDL to DML and queries for the midterm.</li>
+          </ul>
+        </section>
+        <section class="note-subsection" aria-labelledby="week-8-class-15">
+          <h3 id="week-8-class-15">Class 15: Midterm Review Workshop</h3>
+          <p>Begin with music data represented as a Python list of dictionaries. Identify the parts of the data structure and notice where composer information repeats. Then translate the data into a <code>composer</code> and <code>tune</code> ERD, determine the relationship's cardinality, and evaluate the tables' normal form before implementing them with SQL.</p>
+          <ul class="resource-list">
+            <li><a href="files/class_15_midterm_review_workshop.pdf" target="_blank" rel="noopener noreferrer">Midterm Review Workshop slides</a></li>
+            <li><a href="https://edstem.org/us/courses/105050/workspaces/p51dWtWdWSoIzqgTLicw5dyoEVkQ9aVo" target="_blank" rel="noopener noreferrer">Midterm review starter: EdStem workspace</a>
+              <ul class="lecture-companions" aria-label="Class 15 workspace instructions">
+                <li>Fork your own copy at the beginning of the workshop and share your completed workspace with the instructor at the end of class.</li>
+              </ul>
+            </li>
+          </ul>
+          <h4>Workshop sequence</h4>
+          <ol>
+            <li>Inspect a Python list of dictionary objects: identify the outer collection, records, keys, values, identifiers, and repeated data.</li>
+            <li>Study the composer/tune ERD: identify the primary and foreign keys, state the cardinality, and explain the tables' normal form.</li>
+            <li>Create and populate the tables with DDL and DML.</li>
+            <li>Verify the schema, retrieve and sort records, join the related tables, and complete the update challenge.</li>
+          </ol>
+        </section>
       </article>
       <article class="panel">
         <h2>Week 9: Midterm</h2>
